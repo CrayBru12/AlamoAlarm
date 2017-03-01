@@ -12,7 +12,7 @@ if os.path.isfile("Alarm.txt") == False:
 	flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
 	filecreate = os.open("Alarm.txt", flags)
 	with os.fdopen(fisierCreat, 'w') as fileCreated:
-	    fileCreated.write("https://www.youtube.com/watch?v=dQw4w9WgXcQ \nhttps://www.youtube.com/watch?v=OPf0YbXqDm0 \nhttps://www.youtube.com/watch?v=jofNR_WkoCE")
+	    fileCreated.write("https://www.youtube.com/watch?v=dQw4w9WgXcQ \n https://www.youtube.com/watch?v=OPf0YbXqDm0 \n https://www.youtube.com/watch?v=jofNR_WkoCE")
 
 #User Input to Set Alarm
 print "What time would you like to set the Alarm for?"
