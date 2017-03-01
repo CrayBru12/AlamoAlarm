@@ -12,7 +12,7 @@ if os.path.isfile("Alarm.txt") == False:
 	flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
 	filecreate = os.open("Alarm.txt", flags)
 	with os.fdopen(fisierCreat, 'w') as fileCreated:
-	    fileCreated.write("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+	    fileCreated.write("https://www.youtube.com/watch?v=dQw4w9WgXcQ \nhttps://www.youtube.com/watch?v=OPf0YbXqDm0 \nhttps://www.youtube.com/watch?v=jofNR_WkoCE")
 
 #User Input to Set Alarm
 print "What time would you like to set the Alarm for?"
@@ -24,28 +24,24 @@ Time = time.strftime("%H:%M")
 
 #To open text file
 with open("Alarm.txt") as A:
-	
+	#reads content
 	content = A.readlines()
 
 
-#When the Time does not equal the Alarm time string given above, print the time
+#Every time that is not the alarm time
 while Time != Alarm:
 	
 	print "The time is " + Time
 	
-	#Restating the Time variable allows the time to refresh
-	#When I tried keeping the variable outside of the loop it just repeated the inital time
 	Time = time.strftime("%H:%M")
 	
-	#This keeps the loop from flooding the command line with updates of the time :P
+	#Prevention of flooding command line with time udates
 	time.sleep(1)
 
-#If the Time variable is equal to the Alarm string, this code activates
+#Alarm activation code
 if Time == Alarm:
 
-	print "Time to Wake up!"
-	#from the variable content, a random link is chosen and then that link is stored in random_video variable
+	print "Hello, World! It is time to wake up!"
+	#chooses a random link from Alarm file
 	random_video = random.choice(content)
-	#Using the webbrowser library, it opens this youtube video link.
-	#The videos are varius aphex twin songs
 	webbrowser.open(random_video)
