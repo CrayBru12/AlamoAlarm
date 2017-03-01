@@ -20,13 +20,12 @@ print "Use this form.\nExample: 09:30"
 Alarm = raw_input("Alarm Set> ")
 
 
-#I first need to state the Time variable so it's usable in the while-loop
 Time = time.strftime("%H:%M")
 
-#This opens the text file with the youtube links
-with open("YT.txt") as f:
-	#the urls are stored in the content variable 
-	content = f.readlines()
+#To open text file
+with open("Alarm.txt") as A:
+	
+	content = A.readlines()
 
 
 #When the Time does not equal the Alarm time string given above, print the time
